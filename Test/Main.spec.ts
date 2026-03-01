@@ -1,7 +1,6 @@
 import { test, expect } from '@playwright/test';
 import { questions } from './Q&A.ts';
 import { personalities } from './Personalities/Personalities.ts';
-
 //import { verifyLandingPage } from './LandingPage.ts';
 test.describe('Personamap Tests', () => {});
 
