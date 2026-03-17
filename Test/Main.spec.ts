@@ -5,7 +5,7 @@ import { LandingPage } from './Pages/LandingPage.ts';
 import { FinalPage } from './Pages/FinalPageVerify.ts';
 import { runLearnMoreChecks } from './LearnMore/LearnMore.ts';
 import {BlogPage} from './Pages/BlogPages.ts';
-import { run } from 'node:test';
+import { url } from './Data/Links.ts';
 
 test.describe('Personamap Tests', () => {});
 
@@ -16,7 +16,7 @@ test('Verify Landing Page UI', async ({ page }) => {
   const blogPage = new BlogPage(page);
 
 
-  await page.goto('https://personamap.vercel.app/');
+  await page.goto(url);
   await landingPage.verifyLandingPage();
   await runLearnMoreChecks(page);
     
@@ -28,7 +28,7 @@ test('Q & A clicking - all personalities', async ({ page }) => {
 
   for (const personality of personalities) {
     try {
-      await page.goto('https://personamap.vercel.app/');
+      await page.goto(url);
 
       await page.getByRole('link', { name: 'Take Free Test' }).click();
 
